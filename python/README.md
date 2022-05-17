@@ -2,7 +2,7 @@
 
 ## Language: `Python`
 
-### Table of Contentents
+### Table of Contents
 
 - [Code-Challenge  01: Array-Reverse](./code_challenges/array_reverse/README.md)
 
