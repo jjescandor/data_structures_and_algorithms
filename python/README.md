@@ -5,7 +5,9 @@
 ### Table of Contents
 
 - [Code-Challenge  01: Array-Reverse](./code_challenges/array_reverse/README.md)
-- [Code-Challenge  01: Array-Insert-Shift](./code_challenges/array-insert-shift/README.md)
+- [Code-Challenge  02: Array-Insert-Shift](./code_challenges/array-insert-shift/README.md)
+- [Code-Challenge  03: Array-Binary-Search](./code_challenges/array-binary-search/README.md)
+
 
 ### Folder and Challenge Setup
 
