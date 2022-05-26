@@ -8,7 +8,7 @@ Check the Resources section for details
 ![whiteboard](whiteboard.png)
 
 ## Approach & Efficiency
-1. We used Binary Search Tree Algorithim.
+1. We used Binary Search.
 1. The Big O (time) for our algorithm is O(log(n)).
 1. The Big O (space) for our algorithm is O(1)
 1. Our algorithm is a little more efficient than linear because it actually gets quicker over time.
