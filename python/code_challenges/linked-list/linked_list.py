@@ -11,6 +11,9 @@ class Node:
 class LinkedList:
     """
     This is the class to create a linked list
+    1. to_string() -> returns a a string representing all the values in the Linked List, formatted as: "{ a } -> { b } -> { c } -> NULL"
+    2. insert() -> Adds a new node with that value to the head of the list with an O(1) Time performance.
+    3. includes() -> Indicates whether that value exists as a Node’s value somewhere within the list.
     """
 
     def __init__(self, head=None):
@@ -22,12 +25,11 @@ class LinkedList:
         while current:
             str += f'{{ {current.value} }} -> '
             current = current.next
-        print(str)
         return str + "NULL"
 
     def insert(self, value):
         node = Node(value)
-        if self.head is not None:
+        if self.head:
             node.next = self.head
         self.head = node
 
