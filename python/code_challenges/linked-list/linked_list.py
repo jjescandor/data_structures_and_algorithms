@@ -37,7 +37,7 @@ class LinkedList:
         current = self.head
         str = ''
         while current:
-            str += f'{ {current.value} } -> '
+            str += f'{{ {current.value} }} -> '
             current = current.next
         return str + "NULL"
 

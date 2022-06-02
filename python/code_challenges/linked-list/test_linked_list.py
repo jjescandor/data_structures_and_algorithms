@@ -69,7 +69,7 @@ def test_to_string():
     node2 = Node(2, node3)
     node1 = Node(1, node2)
     linked_list = LinkedList(node1)
-    assert '{1} -> {2} -> {3} -> {4} -> NULL' == linked_list.to_string()
+    assert '{ 1 } -> { 2 } -> { 3 } -> { 4 } -> NULL' == linked_list.to_string()
 
 
 def test_includes_node_2():
