@@ -129,11 +129,13 @@ def test_append_node_5():
     assert '{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 6 } -> NULL' == linked_list.to_string()
 
 
-def test_append_node_5():
+def test_append_multiple_nodes():
     node4 = Node(4)
     node3 = Node(3, node4)
     node2 = Node(2, node3)
     node1 = Node(1, node2)
     linked_list = LinkedList(node1)
+    linked_list.append(5)
     linked_list.append(6)
-    assert '{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 6 } -> NULL' == linked_list.to_string()
+    linked_list.append(7)
+    assert '{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> { 7 } -> NULL' == linked_list.to_string()
