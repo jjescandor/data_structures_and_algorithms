@@ -55,33 +55,5 @@ Big O time: O(n)
 Big O space: O(1)
 
 ## Solution
-1. Append:
-  Define method
-  Create new node passing in value
-  Create variable called current
-  Check if self.head has a value.
-  If not, set to value and return. 
-  Give current value of self.head
-  Traverse linked list while current.next is truthy and set current to current.next
-  When current.next is falsy, current.next is set to new node
 
-1. Insert Before:
-  Define method
-  Create new node passing in new value and value to find in list
-  Create variable called current
-  Check if self.head has a value.
-  If not, set to value and return.
-  Give current value of self.head
-  Traverse linked list while current is truthy and set current to current.next
-  If current.next.value is equal to value_searched, set current is equal to instantiation of Node class passing new_value.
-  
-1. Insert After:
-    Define method
-    Create new node passing in new value and value to find in list
-    Create variable called current
-    Check if self.head has a value. 
-    If not, set to value and return.
-    Give current value of self.head
-    Traverse linked list while current is truthy and set current to current.next
-    If current.value is equal to value_searched, set current isn equal to new_value.
-
+[linked to code](./linked_list.py)
