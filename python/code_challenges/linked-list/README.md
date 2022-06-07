@@ -1,9 +1,10 @@
-# Singly Linked List
-1. A singly linked list is a type of linked list that is unidirectional, that is, it can be traversed in only one direction from head to the last node (tail).
+# Linked List
+1. A linked list is a type of linked list that is unidirectional, that is, it can be traversed in only one direction from head to the last node (tail).
 
 1. Each element in a linked list is called a node. A single node contains data and a pointer to the next node which helps in maintaining the structure of the list.
 
-## Challenge
+
+## Challenge 05
 Create a Linked List class
 Within your Linked List class, include a head property.
 Upon instantiation, an empty Linked List should be created.
@@ -28,3 +29,59 @@ The class should contain the following methods
 1. to_string() -> returns a a string representing all the values in the Linked List, formatted as: "{ a } -> { b } -> { c } -> NULL"
 1. insert() -> Adds a new node with that value to the head of the list with an O(1) Time performance.
 1. includes() -> Indicates whether that value exists as a Node’s value somewhere within the list.
+
+ 
+
+
+## Challenge 06 Summary
+1. Write the following methods for the Linked List class:
+    1. append
+        arguments: new value
+        adds a new node with the given value to the end of the list
+    1. insert before
+        arguments: value, new value
+        adds a new node with the given new value immediately before the first node that has the value specified
+    1. insert after
+        arguments: value, new value
+        adds a new node with the given new value immediately after the first node that has the value specified
+
+## Whiteboard Process
+
+![insertion](insertion.png)
+
+
+## Approach & Efficiency
+Big O time: O(n)
+Big O space: O(1)
+
+## Solution
+1. Append:
+  Define method
+  Create new node passing in value
+  Create variable called current
+  Check if self.head has a value.
+  If not, set to value and return. 
+  Give current value of self.head
+  Traverse linked list while current.next is truthy and set current to current.next
+  When current.next is falsy, current.next is set to new node
+
+1. Insert Before:
+  Define method
+  Create new node passing in new value and value to find in list
+  Create variable called current
+  Check if self.head has a value.
+  If not, set to value and return.
+  Give current value of self.head
+  Traverse linked list while current is truthy and set current to current.next
+  If current.next.value is equal to value_searched, set current is equal to instantiation of Node class passing new_value.
+  
+1. Insert After:
+    Define method
+    Create new node passing in new value and value to find in list
+    Create variable called current
+    Check if self.head has a value. 
+    If not, set to value and return.
+    Give current value of self.head
+    Traverse linked list while current is truthy and set current to current.next
+    If current.value is equal to value_searched, set current isn equal to new_value.
+

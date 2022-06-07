@@ -34,6 +34,9 @@ class LinkedList:
         self.head = node
 
     def append(self, value):
+        if self.head is None:
+            self.head = Node(value)
+            return
         current = self.head
         while current.next:
             current = current.next
@@ -41,6 +44,9 @@ class LinkedList:
             current.next = Node(value)
 
     def insert_after(self, value, new_value):
+        if self.head is None:
+            self.head = Node(new_value)
+            return
         current = self.head
         while current:
             if current.value == value:
@@ -50,6 +56,9 @@ class LinkedList:
             current = current.next
 
     def insert_before(self, value, new_value):
+        if self.head is None:
+            self.head = Node(new_value)
+            return
         current = self.head
         while current:
             if current.value == value:
@@ -58,9 +67,8 @@ class LinkedList:
             elif current.next.value == value:
                 node = Node(new_value, current.next)
                 current.next = node
-                break
+                return
             current = current.next
-        print(self)
 
     def to_string(self):
         current = self.head
