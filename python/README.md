@@ -8,6 +8,9 @@
 - [Code-Challenge  02: Array-Insert-Shift](./code_challenges/array-insert-shift/README.md)
 - [Code-Challenge  03: Array-Binary-Search](./code_challenges/array-binary-search/README.md)
 - [Code-Challenge  04: Linked List](./code_challenges/linked-list/README.md)
+- [Code-Challenge  05: Linked List](./code_challenges/linked-list/README.md)
+- [Code-Challenge  06: Linked List](./code_challenges/linked-list/README.md)
+
 
 
 ### Folder and Challenge Setup
