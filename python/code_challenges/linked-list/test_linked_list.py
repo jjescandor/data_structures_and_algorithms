@@ -117,3 +117,23 @@ def test_includes_node_20():
     linked_list = LinkedList(node1)
     linked_list.insert(20)
     assert 20 == linked_list.head.value
+
+
+def test_append_node_5():
+    node4 = Node(4)
+    node3 = Node(3, node4)
+    node2 = Node(2, node3)
+    node1 = Node(1, node2)
+    linked_list = LinkedList(node1)
+    linked_list.append(6)
+    assert '{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 6 } -> NULL' == linked_list.to_string()
+
+
+def test_append_node_5():
+    node4 = Node(4)
+    node3 = Node(3, node4)
+    node2 = Node(2, node3)
+    node1 = Node(1, node2)
+    linked_list = LinkedList(node1)
+    linked_list.append(6)
+    assert '{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 6 } -> NULL' == linked_list.to_string()
