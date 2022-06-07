@@ -33,6 +33,35 @@ class LinkedList:
             node.next = self.head
         self.head = node
 
+    def append(self, value):
+        current = self.head
+        while current.next:
+            current = current.next
+        if current.next is None:
+            current.next = Node(value)
+
+    def insert_after(self, value, new_value):
+        current = self.head
+        while current:
+            if current.value == value:
+                node = Node(new_value, current.next)
+                current.next = node
+                break
+            current = current.next
+
+    def insert_before(self, value, new_value):
+        current = self.head
+        while current:
+            if current.value == value:
+                self.insert(new_value)
+                return
+            elif current.next.value == value:
+                node = Node(new_value, current.next)
+                current.next = node
+                break
+            current = current.next
+        print(self)
+
     def to_string(self):
         current = self.head
         str = ''
@@ -48,3 +77,16 @@ class LinkedList:
                 return True
             current = current.next
         return False
+
+
+if __name__ == "__main__":
+
+    linked_list = LinkedList()
+
+    linked_list.insert("apple")
+
+    linked_list.insert("banana")
+
+    linked_list.insert_after("banana", "cucumber")
+
+    linked_list.to_string()
