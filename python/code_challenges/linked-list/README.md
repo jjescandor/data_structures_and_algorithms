@@ -57,3 +57,23 @@ Big O space: O(1)
 ## Solution
 
 [linked to code](./linked_list.py)
+
+## Challenge 07 Summary
+1. Write the following method for the Linked List class:
+kth from end
+argument: a number, k, as a parameter.
+Return the node’s value that is k places from the tail of the linked list.
+You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Whiteboard Process
+
+![insertion](kth_from_end.png)
+
+
+## Approach & Efficiency
+Big O time: O(n)
+Big O space: O(1)
+
+## Solution
+
+[linked to code](./linked_list.py)
