@@ -18,6 +18,7 @@ class LinkedList:
 
     def __init__(self, head=None):
         self.head = head
+        self.length = 0
 
     def __str__(self):
         current = self.head
@@ -60,15 +61,38 @@ class LinkedList:
             self.head = Node(new_value)
             return
         current = self.head
+        if current:
+            while current:
+                if current.value == value:
+                    self.insert(new_value)
+                    return
+                elif current.next.value == value:
+                    node = Node(new_value, current.next)
+                    current.next = node
+                    return
+                current = current.next
+        else:
+            raise TargetError
+
+    def kth_from_end(self, k):
+        length = 0
+        current = self.head
+        pos = 0
         while current:
-            if current.value == value:
-                self.insert(new_value)
-                return
-            elif current.next.value == value:
-                node = Node(new_value, current.next)
-                current.next = node
-                return
+            length += 1
             current = current.next
+        if k >= length:
+            raise TargetError
+        else:
+            pos = length - k
+            current = self.head
+            while pos-1:
+                pos -= 1
+                current = current.next
+            if current:
+                return current.value
+            else:
+                raise TargetError
 
     def to_string(self):
         current = self.head
@@ -87,6 +111,14 @@ class LinkedList:
         return False
 
 
+class TargetError(Exception):
+    def __init__(self) -> None:
+        self.message = "Error"
+
+    def __str__(self):
+        return self.message
+
+
 if __name__ == "__main__":
 
     linked_list = LinkedList()
@@ -95,6 +127,12 @@ if __name__ == "__main__":
 
     linked_list.insert("banana")
 
-    linked_list.insert_after("banana", "cucumber")
+    linked_list.insert("strawberry")
 
-    linked_list.to_string()
+    linked_list.insert("mango")
+
+    linked_list.insert("orange")
+
+    print(linked_list.to_string())
+
+    print(linked_list.kth_from_end(0))
