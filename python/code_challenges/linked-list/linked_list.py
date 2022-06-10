@@ -133,6 +133,8 @@ if __name__ == "__main__":
 
     linked_list.insert("orange")
 
+    linked_list.insert("nuts")
+
     print(linked_list.to_string())
 
     print(linked_list.kth_from_end(0))
