@@ -117,7 +117,13 @@ class TargetError(Exception):
         return self.message
 
 
-def zip(ll1, ll2):
+def zip_lists(ll1, ll2):
+    if ll1.head is None and ll2.head is None:
+        raise TargetError
+    if ll2.head is None and ll1:
+        return ll1
+    if ll1.head is None and ll2:
+        return ll2
     curr1 = ll1.head
     curr2 = ll2.head
     while curr1 and curr2:
@@ -150,4 +156,4 @@ if __name__ == "__main__":
 
     print("**ll1**", linked_list)
     print("**ll2**", linked_list2)
-    print("**zip linked-list**", zip(linked_list, linked_list2))
+    print("**zip linked-list**", zip_lists(linked_list, linked_list2))
