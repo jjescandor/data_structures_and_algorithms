@@ -1,6 +1,5 @@
 import pytest
-from linked_list import LinkedList
-# TargetError
+from linked_list import LinkedList, TargetError
 
 
 # @pytest.mark.skip("TODO")
@@ -56,7 +55,7 @@ def test_insert_after():
         linked_list) == "{ banana } -> { cucumber } -> { apple } -> NULL"
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_insert_before_empty():
     linked_list = LinkedList()
 
@@ -64,7 +63,7 @@ def test_insert_before_empty():
         linked_list.insert_before("radish", "zucchinni")
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_insert_before_missing():
     linked_list = LinkedList()
 
@@ -74,15 +73,16 @@ def test_insert_before_missing():
         linked_list.insert_before("radish", "zucchinni")
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_insert_after_empty():
     linked_list = LinkedList()
 
     with pytest.raises(TargetError):
         linked_list.insert_after("radish", "zucchinni")
 
+# @pytest.mark.skip("TODO")
 
-@pytest.mark.skip("TODO")
+
 def test_insert_after_missing():
     linked_list = LinkedList()
 
