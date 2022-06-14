@@ -77,3 +77,25 @@ Big O space: O(1)
 ## Solution
 
 [linked to code](./linked_list.py)
+
+
+## Challenge 08 Summary
+1. Write a function called zip lists
+    Arguments: 2 linked lists
+1. Return: New Linked List, zipped as noted below
+1. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the the zipped list.
+1. Try and keep additional space down to O(1)
+    You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+## Whiteboard Process
+
+![zip](zip.png)
+
+
+## Approach & Efficiency
+Big O time: O(n)
+Big O space: O(1)
+
+## Solution
+
+[linked to code](./linked_list.py)

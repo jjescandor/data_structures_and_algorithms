@@ -45,9 +45,8 @@ class LinkedList:
             current.next = Node(value)
 
     def insert_after(self, value, new_value):
-        if self.head is None:
-            self.head = Node(new_value)
-            return
+        if self.includes(value) is False:
+            raise TargetError
         current = self.head
         while current:
             if current.value == value:
@@ -57,22 +56,21 @@ class LinkedList:
             current = current.next
 
     def insert_before(self, value, new_value):
+        if self.includes(value) is False:
+            raise TargetError
         if self.head is None:
             self.head = Node(new_value)
             return
         current = self.head
-        if current:
-            while current:
-                if current.value == value:
-                    self.insert(new_value)
-                    return
-                elif current.next.value == value:
-                    node = Node(new_value, current.next)
-                    current.next = node
-                    return
-                current = current.next
-        else:
-            raise TargetError
+        while current:
+            if current.value == value:
+                self.insert(new_value)
+                return
+            elif current.next.value == value:
+                node = Node(new_value, current.next)
+                current.next = node
+                return
+            current = current.next
 
     def kth_from_end(self, k):
         length = 0
@@ -89,10 +87,10 @@ class LinkedList:
             while pos-1:
                 pos -= 1
                 current = current.next
-            if current:
-                return current.value
-            else:
-                raise TargetError
+        if current:
+            return current.value
+        else:
+            raise TargetError
 
     def to_string(self):
         current = self.head
@@ -119,22 +117,43 @@ class TargetError(Exception):
         return self.message
 
 
+def zip_lists(ll1, ll2):
+    if ll1.head is None and ll2.head is None:
+        raise TargetError
+    if ll2.head is None and ll1:
+        return ll1
+    if ll1.head is None and ll2:
+        return ll2
+    curr1 = ll1.head
+    curr2 = ll2.head
+    while curr1 and curr2:
+        temp1 = curr1.next
+        temp2 = curr2.next
+        curr2.next = temp1
+        curr1.next = curr2
+        curr1 = temp1
+        curr2 = temp2
+        ll2.head = curr2
+    return ll1
+
+
 if __name__ == "__main__":
-
     linked_list = LinkedList()
-
     linked_list.insert("apple")
-
     linked_list.insert("banana")
-
     linked_list.insert("strawberry")
-
     linked_list.insert("mango")
-
     linked_list.insert("orange")
-
     linked_list.insert("nuts")
 
-    print(linked_list.to_string())
+    linked_list2 = LinkedList()
+    linked_list2.insert("1")
+    linked_list2.insert("2")
+    linked_list2.insert("3")
+    linked_list2.insert("4")
+    linked_list2.insert("5")
+    linked_list2.insert("6")
 
-    print(linked_list.kth_from_end(0))
+    print("**ll1**", linked_list)
+    print("**ll2**", linked_list2)
+    print("**zip linked-list**", zip_lists(linked_list, linked_list2))
