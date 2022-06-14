@@ -129,30 +129,31 @@ def zip_lists(ll1, ll2):
     while curr1 and curr2:
         temp1 = curr1.next
         temp2 = curr2.next
-        curr2.next = temp1
+        if temp1 is not None:
+            curr2.next = temp1
         curr1.next = curr2
         curr1 = temp1
         curr2 = temp2
-        ll2.head = curr2
+        # ll2.head = curr2
     return ll1
 
 
 if __name__ == "__main__":
     linked_list = LinkedList()
-    linked_list.insert("apple")
-    linked_list.insert("banana")
-    linked_list.insert("strawberry")
-    linked_list.insert("mango")
-    linked_list.insert("orange")
-    linked_list.insert("nuts")
+    linked_list.insert(2)
+    linked_list.insert(1)
+    # linked_list.insert("strawberry")
+    # linked_list.insert("mango")
+    # linked_list.insert("orange")
+    # linked_list.insert("nuts")
 
     linked_list2 = LinkedList()
-    linked_list2.insert("1")
-    linked_list2.insert("2")
-    linked_list2.insert("3")
-    linked_list2.insert("4")
-    linked_list2.insert("5")
-    linked_list2.insert("6")
+    linked_list2.insert("C")
+    linked_list2.insert("B")
+    linked_list2.insert("A")
+    # linked_list2.insert("4")
+    # linked_list2.insert("5")
+    # linked_list2.insert("6")
 
     print("**ll1**", linked_list)
     print("**ll2**", linked_list2)
