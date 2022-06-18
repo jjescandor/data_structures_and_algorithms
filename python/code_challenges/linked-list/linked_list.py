@@ -129,32 +129,62 @@ def zip_lists(ll1, ll2):
     while curr1 and curr2:
         temp1 = curr1.next
         temp2 = curr2.next
+        curr1.next = curr2
         if temp1 is not None:
             curr2.next = temp1
-        curr1.next = curr2
         curr1 = temp1
         curr2 = temp2
-        # ll2.head = curr2
     return ll1
+
+
+def sum_ll(ll1):
+    sum = 0
+    curr = ll1.head
+    while curr:
+        if curr.value % 2:
+            sum += curr.value
+        curr = curr.next
+    return sum
+
+
+def reverse_ll(linked_ll):
+    prev = None
+    current = linked_ll.head
+    while current:
+        temp = current.next
+        current.next = prev
+        prev = current
+        current = temp
+    linked_ll.head = prev
+    return linked_ll
+
+
+def isPalindrome(linked_ll):
+    current = linked_ll.head
+    temp = []
+    temp2 = []
+    while current:
+        temp.append(current.value)
+        current = current.next
+    for i in range(len(temp), 0, -1):
+        temp2.append(temp[i-1])
+    return temp == temp2
 
 
 if __name__ == "__main__":
     linked_list = LinkedList()
+    linked_list.insert(4)
+    linked_list.insert(3)
     linked_list.insert(2)
     linked_list.insert(1)
-    # linked_list.insert("strawberry")
-    # linked_list.insert("mango")
-    # linked_list.insert("orange")
-    # linked_list.insert("nuts")
-
-    linked_list2 = LinkedList()
-    linked_list2.insert("C")
-    linked_list2.insert("B")
-    linked_list2.insert("A")
-    # linked_list2.insert("4")
-    # linked_list2.insert("5")
-    # linked_list2.insert("6")
-
-    print("**ll1**", linked_list)
-    print("**ll2**", linked_list2)
-    print("**zip linked-list**", zip_lists(linked_list, linked_list2))
+    linked_list.insert(0)
+    print(linked_list)
+    print(reverse_ll(linked_list))
+    print(linked_list)
+    ll = LinkedList()
+    ll.insert('b')
+    ll.insert('b')
+    ll.insert('b')
+    ll.insert('b')
+    print(ll)
+    print(isPalindrome(ll))

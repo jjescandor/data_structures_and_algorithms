@@ -10,7 +10,10 @@
 - [Code-Challenge  04: Linked List](./code_challenges/linked-list/README.md)
 - [Code-Challenge  05: Linked List - append](./code_challenges/linked-list/README.md)
 - [Code-Challenge  06: Linked List - insertions](./code_challenges/linked-list/README.md)
-- [Code-Challenge  06: Linked List - kth-from-end](./code_challenges/linked-list/README.md)
+- [Code-Challenge  07: Linked List - kth-from-end](./code_challenges/linked-list/README.md)
+- [Code-Challenge  08: Linked List - zip-lists](./code_challenges/linked-list/README.md)
+- [Code-Challenge  09: Linked List - mock-interview](./code_challenges/linked-list/README.md)
+- [Code-Challenge  10: Linked List - stack-and-queue](./code_challenges/stack-and-queue/README.md)
 
 
 
