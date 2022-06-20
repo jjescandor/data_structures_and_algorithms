@@ -13,11 +13,11 @@ class Stack:
 
     def __str__(self):
         current = self.top
-        str = ''
+        str_ = ''
         while current:
-            str += f'{{ {current.value} }} -> '
+            str_ += f'{{ {current.value} }} -> '
             current = current.next
-        return str + "NULL"
+        return str_ + "NULL"
 
     def push(self, val):
         newNode = Node(val)
@@ -58,5 +58,6 @@ if __name__ == "__main__":
     stack.push(2)
     stack.push(1)
     print(stack)
-    print(stack.pop())
+    print("peek", stack.peek())
+    print("pop", stack.pop())
     print("is_empty", stack.is_empty())

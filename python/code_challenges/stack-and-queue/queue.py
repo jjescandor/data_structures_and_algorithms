@@ -37,7 +37,6 @@ class Queue:
         temp = self.front
         if self.front == self.rear:
             self.rear = None
-
         self.front = self.front.next
         self.size -= 1
         return temp.value
@@ -59,8 +58,7 @@ if __name__ == "__main__":
     q = Queue()
     q.enqueue(4)
     q.enqueue(3)
-    q.enqueue(2)
-    q.enqueue(1)
+    q.dequeue()
     print(q)
     print("dequeue", q.dequeue())
     print("is_empty", q.is_empty())
