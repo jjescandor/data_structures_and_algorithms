@@ -39,7 +39,6 @@ if __name__ == "__main__":
     s.enqueue(2)
     s.enqueue(3)
     s.enqueue(4)
-    print(s)
     s.dequeue()
     s.dequeue()
     s.dequeue()
