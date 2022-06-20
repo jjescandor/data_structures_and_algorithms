@@ -16,18 +16,14 @@ class PseudoQueue:
         return str_ + "NULL"
 
     def enqueue(self, value):
-        if self.front is None:
+        if self.front.is_empty():
             self.front.push(value)
         else:
-            current = self.front.top
-            while current:
+            while not self.front.is_empty():
                 self.rear.push(self.front.pop())
-                current = current.next
             self.front.push(value)
-            current = self.rear.top
-            while current:
+            while not self.rear.is_empty():
                 self.front.push(self.rear.pop())
-                current = current.next
 
     def dequeue(self):
         return self.front.pop()
