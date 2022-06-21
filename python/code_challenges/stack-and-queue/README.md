@@ -54,3 +54,39 @@ Queue
     1. dequeue - Removes the node from the front of the queue
     1. peek- returns: Value of the node located at the front of the queue
     1. is empty - returns: Boolean indicating whether or not the queue is empty
+
+
+
+# PseudoQueue
+
+## Challenge Summary
+1. Create a new class called pseudo queue.
+1. Do not use an existing Queue.
+1. Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below),
+1. Internally, utilize 2 Stack instances to create and manage the queue
+
+## Whiteboard Process
+![pseudo](pseudo.png)
+
+## Approach & Efficiency
+the enqueue() method has a time complexity of O(n) and has a space complexity of O(1)
+the dequeue() method has a time complexity of O(1) and has a space complexity of O(1)
+
+## Solution
+1. to run the code:
+1. go to stack_and_queue [file](stack_queue_pseudo.py)
+1. copy the following code to __main__ if theyre not in their already:
+    ```
+    s = PseudoQueue()
+    s.enqueue(1)
+    s.enqueue(2)
+    s.enqueue(3)
+    s.enqueue(4)
+    s.dequeue()
+    s.dequeue()
+    s.dequeue()
+    print(s)
+    ```
+1. run "python3 stack_queue_pseudo.py" command in the terminal
+1. the output should be:
+    { 4 } -> NULL
