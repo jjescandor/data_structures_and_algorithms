@@ -1,11 +1,12 @@
+from os import lseek
 import queue
 from stack import Stack
 
 
 class PseudoQueue:
     def __init__(self):
-        self.front = Stack()
-        self.rear = Stack()
+        self.stack_one = Stack()
+        self.stack_two = Stack()
 
     def __str__(self):
         current = self.front.top
@@ -16,17 +17,17 @@ class PseudoQueue:
         return str_ + "NULL"
 
     def enqueue(self, value):
-        if self.front.is_empty():
-            self.front.push(value)
+        if self.stack_one.is_empty():
+            self.stack_one.push(value)
         else:
-            while not self.front.is_empty():
-                self.rear.push(self.front.pop())
-            self.front.push(value)
-            while not self.rear.is_empty():
-                self.front.push(self.rear.pop())
+            while not self.stack_one.is_empty():
+                self.stack_two.push(self.stack_one.pop())
+            self.stack_one.push(value)
+            while not self.stack_two.is_empty():
+                self.stack_one.push(self.stack_two.pop())
 
     def dequeue(self):
-        return self.front.pop()
+        return self.stack_one.pop()
 
 
 if __name__ == "__main__":

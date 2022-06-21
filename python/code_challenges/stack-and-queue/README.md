@@ -66,7 +66,7 @@ Queue
 1. Internally, utilize 2 Stack instances to create and manage the queue
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
+![pseudo](pseudo.png)
 
 ## Approach & Efficiency
 the enqueue() method has a time complexity of O(n) and has a space complexity of O(1)
