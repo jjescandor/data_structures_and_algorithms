@@ -21,7 +21,7 @@ class Stack:
 
     def push(self, val):
         newNode = Node(val)
-        if self.top is None:
+        if self.is_empty():
             self.top = newNode
         else:
             temp = self.top
@@ -31,7 +31,7 @@ class Stack:
         return self.size
 
     def pop(self):
-        if self.top is None:
+        if self.is_empty():
             raise InvalidOperationError
         temp = self.top
         self.top = self.top.next
@@ -39,17 +39,13 @@ class Stack:
         return temp.value
 
     def peek(self):
-        if self.top is None:
+        if self.is_empty():
             raise InvalidOperationError
         else:
             return self.top.value
 
     def is_empty(self):
-        if self.top:
-            return False
-        else:
-            return True
-
+        return self.top is None
 
 if __name__ == "__main__":
     stack = Stack()

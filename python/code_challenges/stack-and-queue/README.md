@@ -90,3 +90,41 @@ the dequeue() method has a time complexity of O(1) and has a space complexity of
 1. run "python3 stack_queue_pseudo.py" command in the terminal
 1. the output should be:
     { 4 } -> NULL
+
+# Animal Shelter
+
+## Challenge Summary
+1. Create a class called AnimalShelter which holds only dogs and cats.
+1. The shelter operates using a first-in, first-out approach.
+1. Implement the following methods:
+   - enqueue
+   - Arguments: animal
+   - animal can be either a dog or a cat object.
+   - dequeue
+   - Arguments: pref
+   - pref can be either "dog" or "cat"
+   - Return: either a dog or a cat, based on preference.
+   - If pref is not "dog" or "cat" then return null.
+
+## Whiteboard Process
+![pseudo](animal.png)
+
+## Approach & Efficiency
+the enqueue() method has a time complexity of O(1) and has a space complexity of O(1)
+the dequeue() method has a time complexity of O(n) and has a space complexity of O(1)
+
+## Solution
+1. to run the code:
+1. go to stack_and_queue [file](stack_queue_animal_shelter.py)
+1. copy the following code to __main__ if theyre not in there already:
+    ```
+    shelter = AnimalShelter()
+    cat = Cat()
+    dog = Dog()
+    shelter.enqueue(dog)
+    shelter.enqueue(cat)
+    print(shelter)
+    shelter.dequeue("dog")
+    print(shelter)
+    ```
+1. run "python3 stack_queue_animal_shelter.py" command in the terminal
