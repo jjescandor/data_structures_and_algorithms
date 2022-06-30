@@ -14,6 +14,8 @@
 - [Code-Challenge  08: Linked List - zip-lists](./code_challenges/linked-list/README.md)
 - [Code-Challenge  09: Linked List - mock-interview](./code_challenges/linked-list/README.md)
 - [Code-Challenge  10: Linked List - stack-and-queue](./code_challenges/stack-and-queue/README.md)
+- [Code-Challenge  11: Linked List - psuedo-queue](./code_challenges/stack-and-queue/README.md)
+- [Code-Challenge  12: Linked List - stack-and-queue-animal-shelter](./code_challenges/stack-and-queue/README.md)
 
 
 
