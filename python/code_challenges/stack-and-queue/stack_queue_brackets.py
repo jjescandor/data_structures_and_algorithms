@@ -2,22 +2,30 @@ from stack import Stack
 
 
 def multi_bracket_validation(brackets):
-    bracketcont, type = Stack(), {"(": ")", "{": "}", "[": "]"}
+    bracketcont = Stack()
+    type = {"(": ")", "{": "}", "[": "]"}
     for bracket in brackets:
         if bracket in type.keys():
             bracketcont.push(bracket)
-        if bracket in type.values() and type[bracketcont.pop()] == bracket:
-            return False
+        if bracket in type.values():
+            if bracketcont.is_empty():
+                return False
+            if type[bracketcont.peek()] == bracket:
+                bracketcont.pop()
     return bracketcont.is_empty()
 
 
 def multi_bracket_validation_(brackets):
-    bracketcont, type = [], {"(": ")", "{": "}", "[": "]"}
+    bracketcont = []
+    type = {"(": ")", "{": "}", "[": "]"}
     for bracket in brackets:
         if bracket in type.keys():
             bracketcont.append(bracket)
-        if bracket in type.values() and type[bracketcont[-1]] != bracket:
-            return False
+        if bracket in type.values():
+            if len(bracketcont) == 0:
+                return False
+            if type[bracketcont[-1]] == bracket:
+                bracketcont.pop()
     return len(bracketcont) == 0
 
 
