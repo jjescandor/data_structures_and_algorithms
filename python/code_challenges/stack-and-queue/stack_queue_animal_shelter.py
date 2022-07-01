@@ -34,21 +34,18 @@ class AnimalShelter:
             current = self.front
             target = None
             previous = None
-            if str(self.front.value) == value and self.rear is None:
-                target = self.front
-                self.front = None
-                return target.value
             if str(self.front.value) == value:
                 target = self.front
+                if str(self.rear.value) is None:
+                    self.front = None
+                    return target.value
                 self.front = self.front.next
                 return target.value
             while current:
                 previous = current
                 if str(current.next.value) == value:
                     target = current.next
-                    if str(self.front.value) == value:
-                        self.front = self.front.next
-                    elif str(self.rear.value) == value:
+                    if str(self.rear.value) == value:
                         current.next = None
                     elif current.next.next:
                         previous.next = current.next.next
@@ -68,10 +65,15 @@ class AnimalShelterTwo:
 
     def __str__(self):
         current = self.cat_front
+        current2 = self.dog_front
         str = ''
-        while current:
-            str += f'{{ {current.value} }} -> '
-            current = current.next
+        while current or current2:
+            if current:
+                str += f'{{ {current.value} }} -> '
+                current = current.next
+            if current2:
+                str += f'{{ {current2.value} }} -> '
+                current2 = current2.next
         return str + "NULL"
 
     def enqueue(self, value):
@@ -125,9 +127,17 @@ class Cat:
 if __name__ == "__main__":
     shelter = AnimalShelter()
     cat = Cat()
-    dog = Dog()
-    shelter.enqueue(dog)
+    dog1 = Dog()
+    dog2 = Dog()
+    dog3 = Dog()
+    dog4 = Dog()
+    dog5 = Dog()
+    shelter.enqueue(dog1)
+    shelter.enqueue(dog2)
+    shelter.enqueue(dog3)
+    shelter.enqueue(dog4)
+    shelter.enqueue(dog5)
     shelter.enqueue(cat)
     print(shelter)
-    shelter.dequeue("dog")
+    print(shelter.dequeue("cat"))
     print(shelter)
