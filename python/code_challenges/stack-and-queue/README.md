@@ -128,3 +128,23 @@ the dequeue() method has a time complexity of O(n) and has a space complexity of
     print(shelter)
     ```
 1. run "python3 stack_queue_animal_shelter.py" command in the terminal
+
+
+
+# Stack-Queue-Brackets
+
+## Challenge Summary
+1. Write a function called validate brackets
+1. Arguments: string
+1. Return: boolean
+1. representing whether or not the brackets in the string are balanced
+
+## Whiteboard Process
+![bracket](bracket.png)
+
+## Approach & Efficiency
+time complexity of O(n) and has a space complexity of O(1)
+
+## Solution
+1. to run the code:
+1. go to stack_and_queue [file](stack_queue_animal_shelter.py)
