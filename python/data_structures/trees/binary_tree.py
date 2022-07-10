@@ -20,7 +20,7 @@ class BinaryTree:
         def traverse(node):
             if not node:
                 return
-            traverse(node.lsleft)
+            traverse(node.left)
             data.append(node.value)
             traverse(node.right)
         traverse(self.root)
