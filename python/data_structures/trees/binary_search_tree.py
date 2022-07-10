@@ -11,10 +11,6 @@ class BinarySearchTree(BinaryTree):
         # initialization here
         super().__init__(root)
 
-    def some_method(self):
-        # method body here
-        pass
-
     def add(self, value):
         new_node = Node(value)
         if not self.root:

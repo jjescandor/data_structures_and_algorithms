@@ -16,7 +16,9 @@
 - [Code-Challenge  10: Linked List - stack-and-queue](./code_challenges/stack-and-queue/README.md)
 - [Code-Challenge  11: Linked List - psuedo-queue](./code_challenges/stack-and-queue/README.md)
 - [Code-Challenge  12: Linked List - stack-and-queue-animal-shelter](./code_challenges/stack-and-queue/README.md)
-- [Code-Challenge  12: Linked List - stack-and-queue-brackets](./code_challenges/stack-and-queue/README.md)
+- [Code-Challenge  13: Linked List - stack-and-queue-brackets](./code_challenges/stack-and-queue/README.md)
+- [Code-Challenge  15: Trees- Binary Tree and BST Implementation](./data_structures/trees/README.md)
+
 
 
 
