@@ -59,8 +59,15 @@ def test_contains(tree):
 
 
 # @pytest.mark.skip("TODO")
-def test_contains_deeper(tree):
-    actual = tree.contains(5)
+def test_contains_deeper1(tree):
+    actual = tree.contains(25)
+    expected = True
+    assert actual == expected
+
+
+# @pytest.mark.skip("TODO")
+def test_contains_deeper2(tree):
+    actual = tree.contains(45)
     expected = True
     assert actual == expected
 
@@ -78,4 +85,7 @@ def tree():
     tree.add(10)
     tree.add(5)
     tree.add(15)
+    tree.add(25)
+    tree.add(45)
+    tree.add(19)
     return tree
