@@ -28,9 +28,9 @@
 1. Binary Tree
    - pre-order
      - time O(n) space O(h)
-   - in-order 
+   - in-order
      - time O(n) space O(h)
-   - post-order 
+   - post-order
      - time O(n) space O(h)
 
 2. Binary Search Tree
@@ -40,10 +40,29 @@
 ## API
 
 1. Binary Tree
-   - Inorder (Left, Root, Right) 
+   - Inorder (Left, Root, Right)
    - Preorder (Root, Left, Right)
-   - Postorder (Left, Right, Root) 
+   - Postorder (Left, Right, Root)
 
 2. Binary Search Tree
    - Add - Adds a new node with that value in the correct location in the binary search tree.
    - Contains - Finds if a value is in the tree at least once.
+
+
+## Challenge
+
+1. Find maximum value
+
+## Approach & Efficiency
+
+ ![whiteboard](bst.png)
+## Approach & Efficiency
+
+1. Binary Tree
+   - find maximum
+     - time O(n) space O(h)
+
+## API
+
+1. Binary Tree
+   - find maximum - find the maximum value in the binary tree data structure
