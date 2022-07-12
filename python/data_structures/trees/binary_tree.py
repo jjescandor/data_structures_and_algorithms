@@ -5,6 +5,7 @@ class BinaryTree:
 
     def __init__(self, root=None):
         self.root = root
+        self.max_val = self.root
 
     def pre_order(self, data=[]):
         def traverse(node):
@@ -37,17 +38,18 @@ class BinaryTree:
         return data
 
     def find_maximum_value(self):
-        max_val = [self.root.value]
+        self.max_val = self.root
 
         def traverse(node):
             if not node:
-                return
-            if node.value > max_val[-1]:
-                max_val.append(node.value)
-            traverse(node.left)
-            traverse(node.right)
-        traverse(self.root)
-        return max_val[-1]
+                return self.max_val.value
+            else:
+                traverse(node.left)
+                if self.max_val.value < node.value:
+                    self.max_val = node
+                return traverse(node.right)
+
+        return traverse(self.root)
 
 
 class Node:
@@ -66,4 +68,4 @@ if __name__ == "__main__":
     tree.root.left.right = Node(1000)
     tree.root.left.right.left = Node(300)
     print(tree.in_order())
-    print(tree.get_maxfind_maximum_value())
+    print(tree.find_maximum_value())
