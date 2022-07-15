@@ -38,8 +38,6 @@ class BinaryTree:
         return data
 
     def find_maximum_value(self):
-        self.max_val = self.root
-
         def traverse(node):
             if not node:
                 return self.max_val.value
@@ -48,8 +46,27 @@ class BinaryTree:
                 if self.max_val.value < node.value:
                     self.max_val = node
                 return traverse(node.right)
-
+        self.max_val = self.root
         return traverse(self.root)
+
+def breadth_first(tree):
+    queue = []
+    visited = []
+    current = tree.root
+    while current:
+        print("hi")
+        if not current:
+            return
+        visited.append(current.value)
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
+        if len(queue) > 0:
+            current = queue.pop(0)
+        else:
+            break
+    return visited
 
 
 class Node:
