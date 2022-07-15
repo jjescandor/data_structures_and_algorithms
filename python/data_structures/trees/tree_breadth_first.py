@@ -14,7 +14,6 @@ def breadth_first(tree):
             queue.append(current.right)
     return visited
 
-
 if __name__ == "__main__":
 
     t = BinaryTree()
