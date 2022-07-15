@@ -1,7 +1,7 @@
 import pytest
 from binary_tree import BinaryTree, Node
+from binary_search_tree import BinarySearchTree
 from tree_breadth_first import breadth_first
-
 
 # @pytest.mark.skip("TODO")
 def test_exists():
@@ -46,7 +46,32 @@ def test_four_nodes():
     actual = breadth_first(tree)
     assert actual == expected
 
-#
+
+# @pytest.mark.skip("TODO")
+def test_breadth_nums():
+    tree = BinarySearchTree()
+    tree.add(10)
+    tree.add(5)
+    tree.add(6)
+    tree.add(4)
+    tree.add(14)
+    tree.add(12)
+    tree.add(16)
+    assert [10, 5, 14, 4, 6, 12, 16] == breadth_first(tree)
+
+
+# @pytest.mark.skip("TODO")
+def test_binary_search_tree():
+    tree = BinaryTree()
+    tree.root = Node(10)
+    tree.root.left = Node(20)
+    tree.root.right = Node(21)
+    tree.root.left.left = Node(5)
+    tree.root.left.right = Node(1000)
+    tree.root.left.right.left = Node(300)
+    assert [10, 20, 21, 5, 1000, 300] == breadth_first(tree);
+
+
 # @pytest.mark.skip("TODO")
 def test_example_from_reading():
     """

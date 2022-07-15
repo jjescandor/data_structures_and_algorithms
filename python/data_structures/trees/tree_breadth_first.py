@@ -1,26 +1,18 @@
 from binary_tree import BinaryTree, Node
 
-
 def breadth_first(tree):
-
-    queue = []
-    visited = []
-    current = tree.root
-    while current:
-        print("hi")
+    current, queue, visited = tree.root, [], [],
+    queue.append(tree.root)
+    while len(queue):
+        current = queue.pop(0)
         if not current:
-            return
+            return visited
         visited.append(current.value)
         if current.left:
             queue.append(current.left)
         if current.right:
             queue.append(current.right)
-        if len(queue) > 0:
-            current = queue.pop(0)
-        else:
-            break
     return visited
-
 
 if __name__ == "__main__":
 
