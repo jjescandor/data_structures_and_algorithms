@@ -2,7 +2,7 @@
 1. Create a tree data structure with Node Class
 2. Create Binary Tree parent class and Binary Search Tree subclass of Binary Tree
 
-## Challenge
+## Challenge 15
 
 1. Node
 - Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
@@ -49,7 +49,7 @@
    - Contains - Finds if a value is in the tree at least once.
 
 
-## Challenge
+## Challenge 16
 
 1. Find maximum value
 
@@ -66,3 +66,21 @@
 
 1. Binary Tree
    - find maximum - find the maximum value in the binary tree data structure
+
+## Challenge 17
+
+1. Return: list of all values in the tree, in the order they were encountered
+
+## Approach & Efficiency
+
+ ![whiteboard](breadth.png)
+## Approach & Efficiency
+
+1. Binary Tree
+   - breadth first search
+     - time O(n) space O(n)
+
+## API
+
+1. breadth_first()
+   - Return: list of all values in the tree, in the order they were encountered
