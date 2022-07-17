@@ -84,3 +84,23 @@
 
 1. breadth_first()
    - Return: list of all values in the tree, in the order they were encountered
+
+
+## Challenge 18
+
+1. Conduct “FizzBuzz” on a k-ary tree while traversing through it to create a new tree.
+
+1. Set the values of each of the new nodes depending on the corresponding node value in the source tree.
+
+## Approach & Efficiency
+
+ ![whiteboard](breadth.png)
+## Approach & Efficiency
+
+1. K-Ary Tree
+   - breadth first search
+     - time O(n) space O(n)
+
+## API
+
+1. 
