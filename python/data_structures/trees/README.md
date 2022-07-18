@@ -94,13 +94,16 @@
 
 ## Approach & Efficiency
 
- ![whiteboard](breadth.png)
+ ![whiteboard](fizzbuzz.png)
 ## Approach & Efficiency
 
 1. K-Ary Tree
    - breadth first search
-     - time O(n) space O(n)
+     - time O(n^1) space O(1)
 
 ## API
 
-1. 
+1. fizz_buzz_tree()
+  - takes in a parameter and modify the values in place based off of the fizzbuzz logic.
+  - returns the modified tree
+1. [Link to code](tree_fizz_buzz.py)
