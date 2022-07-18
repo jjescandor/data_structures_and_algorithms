@@ -56,14 +56,44 @@ class Node:
         self.left = left
         self.right = right
 
+class People:
+    def __init__(self, value):
+        self.age = value
 
-if __name__ == "__main__":
-    tree = BinaryTree()
-    tree.root = Node(10)
-    tree.root.left = Node(20)
-    tree.root.right = Node(21)
-    tree.root.left.left = Node(5)
-    tree.root.left.right = Node(1000)
-    tree.root.left.right.left = Node(300)
-    print(tree.in_order())
-    print(tree.find_maximum_value())
+
+def find_age_range(tree):
+    min = tree.root.value.age
+    max = tree.root.value.age
+    def ages(node, min, max):
+        if not node:
+            return [min, max]
+        else:
+            ages(node.left, min, max)
+            if max < node.value.age:
+                max = node.value.age
+            if min > node.value.age:
+                min = node.value.age
+            return ages(node.right, min, max)
+    return ages(tree.root, min, max)
+
+
+if __name__ == '__main__':
+    p1 = Node(People(2))
+    p2 = Node(People(10))
+    p3 = Node(People(20))
+    p4 = Node(People(30))
+    T = BinaryTree()
+    T.root = p1
+    T.root.left = p2
+    T.root.left.left = p3
+    T.root.right = p4
+    print(find_age_range(T))
+
+
+
+
+
+
+
+
+
