@@ -1,13 +1,14 @@
 from binary_tree import BinaryTree
 from kary_tree import KaryTree, Node
 from queue import Queue
+import copy
 
 
 def fizz_buzz_tree(tree):
+    new_tree = copy.deepcopy(tree)
     queue = Queue()
     collection = []
-    queue.enqueue(tree.root)
-
+    queue.enqueue(new_tree.root)
     while not queue.is_empty():
         node = queue.dequeue()
         if node.value % 5 == 0 and node.value % 3 == 0:
@@ -20,7 +21,7 @@ def fizz_buzz_tree(tree):
             node.value = str(node.value)
         for child in node.children:
             queue.enqueue(child)
-    return tree
+    return new_tree
 
 
 if __name__ == "__main__":
@@ -56,3 +57,5 @@ if __name__ == "__main__":
     seven.children = [thirteen]
     nine.children = [fourteen, fifteen]
     k = KaryTree(one)
+    fizz_buzz_tree(k)
+
