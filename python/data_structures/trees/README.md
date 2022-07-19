@@ -94,7 +94,7 @@
 
 ## Approach & Efficiency
 
- ![whiteboard](fizzbuzz.png)
+ ![whiteboard](kary.png)
 ## Approach & Efficiency
 
 1. K-Ary Tree
