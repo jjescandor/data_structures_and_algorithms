@@ -19,14 +19,10 @@ def merge(left, right, arr):
             arr[k] = right[j]
             j = j + 1
         k = k + 1
-    while i < len(left):
-        arr[k] = left[i]
-        i += 1
-        k += 1
-    while j < len(right):
-        arr[k] = right[j]
-        j += 1
-        k += 1
+    if i < len(left):
+        arr[k:] = left[i:]
+    else:
+        arr[k:] = right[j:]
 
 if __name__ == "__main__":
     print(merge_sort(unsorted))
