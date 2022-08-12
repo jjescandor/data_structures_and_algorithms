@@ -4,11 +4,9 @@ def merge_sort(arr):
     n = len(arr)
     if n > 1:
         mid = n//2
-        left = [8, 4, 23]
-        print("left", left)
-        right = [42, 16, 15]
-        print("right", right)
-        arr = merge(left, right, arr)
+        left = merge_sort(arr[:mid])
+        right = merge_sort(arr[mid:])
+        merge(left, right, arr)
     return arr
 
 def merge(left, right, arr):
@@ -29,7 +27,6 @@ def merge(left, right, arr):
         arr[k] = right[j]
         j += 1
         k += 1
-    return arr
 
 if __name__ == "__main__":
     print(merge_sort(unsorted))
