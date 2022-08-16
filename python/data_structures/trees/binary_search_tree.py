@@ -48,6 +48,16 @@ class BinarySearchTree(BinaryTree):
                 return traverse(node.left)
         return traverse(self.root)
 
+    def get_max(self):
+        def traverse(node):
+            if not node:
+                return
+            if node.value:
+                if not traverse(node.right):
+                    return node.value
+                return traverse(node.right)
+        return traverse(self.root)
+
 if __name__ == "__main__":
     bst = BinarySearchTree()
     bst.add(9)
@@ -55,10 +65,11 @@ if __name__ == "__main__":
     bst.add(2)
     print(bst.contains(2))
     print(bst.root.left.value)
-    bst.add(2)
-    bst.add(4)
+    bst.add(200)
+    bst.add(4000)
     bst.add(11)
     bst.add(20)
+    bst.add(100)
     bst.add(15)
     bst.add(10)
     print(bst.root.value)
@@ -67,13 +78,14 @@ if __name__ == "__main__":
     print(bst.contains(3))
     print(bst.contains(2))
     print(bst.contains(4))
-    print(bst.contains(11))
+    print(bst.contains(111))
     print(bst.contains(20))
     print(bst.contains(15))
     print(bst.contains(10))
     print(bst.contains(25))
     print(bst.contains(40))
-    print(bst.contains(41))
+    print(bst.contains(410))
     print(bst.contains(42))
     print(bst.contains(1))
     print(bst.contains(2))
+    print("max", bst.get_max())
