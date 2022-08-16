@@ -1,4 +1,4 @@
-# Blog Notes: Quick Sort / Find maximum valued of linked list and binary search tree
+# Blog Notes: Quick Sort / Find maximum value of linked list and binary search tree
 
 ##  Challenge Summary
 In your blog article, visually show the output of processing this input array:
