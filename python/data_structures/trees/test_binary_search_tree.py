@@ -1,5 +1,8 @@
 import pytest
-from binary_search_tree import BinarySearchTree
+try:
+    from binary_search_tree import BinarySearchTree
+except:
+    from .binary_search_tree import BinarySearchTree
 
 
 def test_exists():

@@ -1,5 +1,12 @@
-from binary_tree import BinaryTree
-from binary_tree import Node
+from ast import excepthandler
+
+
+try:
+    from binary_tree import BinaryTree
+    from binary_tree import Node
+except:
+    from .binary_tree import BinaryTree
+    from .binary_tree import Node
 
 
 class BinarySearchTree(BinaryTree):
@@ -57,6 +64,7 @@ class BinarySearchTree(BinaryTree):
                     return node.value
                 return traverse(node.right)
         return traverse(self.root)
+
 
 if __name__ == "__main__":
     bst = BinarySearchTree()

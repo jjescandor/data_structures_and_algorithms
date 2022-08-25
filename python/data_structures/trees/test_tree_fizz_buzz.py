@@ -1,7 +1,12 @@
 import pytest
-from tree_fizz_buzz import fizz_buzz_tree
-from kary_tree import KaryTree, Node
-from queue import Queue
+try:
+    from tree_fizz_buzz import fizz_buzz_tree
+    from kary_tree import KaryTree, nNode
+    from queue import Queue
+except:
+    from .tree_fizz_buzz import fizz_buzz_tree
+    from .kary_tree import KaryTree, nNode
+    from .queue import Queue
 
 
 # @pytest.mark.skip("TODO")
@@ -67,21 +72,21 @@ def test_new_copy_returned(tree):
 
 @pytest.fixture
 def tree():
-    one = Node(1)
-    two = Node(2)
-    three = Node(3)
-    four = Node(4)
-    five = Node(5)
-    six = Node(6)
-    seven = Node(7)
-    eight = Node(8)
-    nine = Node(9)
-    ten = Node(10)
-    eleven = Node(11)
-    twelve = Node(12)
-    thirteen = Node(13)
-    fourteen = Node(14)
-    fifteen = Node(15)
+    one = nNode(1)
+    two = nNode(2)
+    three = nNode(3)
+    four = nNode(4)
+    five = nNode(5)
+    six = nNode(6)
+    seven = nNode(7)
+    eight = nNode(8)
+    nine = nNode(9)
+    ten = nNode(10)
+    eleven = nNode(11)
+    twelve = nNode(12)
+    thirteen = nNode(13)
+    fourteen = nNode(14)
+    fifteen = nNode(15)
 
     """
                             1

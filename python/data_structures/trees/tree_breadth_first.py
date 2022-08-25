@@ -1,4 +1,8 @@
-from binary_tree import BinaryTree, Node
+try:
+    from .binary_tree import BinaryTree, Node
+except:
+    from binary_tree import BinaryTree, Node
+
 
 def breadth_first(tree):
     current, queue, visited = tree.root, [], [],
@@ -13,6 +17,7 @@ def breadth_first(tree):
         if current.right:
             queue.append(current.right)
     return visited
+
 
 if __name__ == "__main__":
 

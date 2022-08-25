@@ -1,4 +1,7 @@
-from invalid_operation_error import InvalidOperationError
+try:
+    from invalid_operation_error import InvalidOperationError
+except:
+    from .invalid_operation_error import InvalidOperationError
 
 
 class Queue:
