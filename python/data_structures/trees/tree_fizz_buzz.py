@@ -1,7 +1,74 @@
-from binary_tree import BinaryTree
-from kary_tree import KaryTree, Node
-from queue import Queue
+try:
+    from binary_tree import BinaryTree
+    from kary_tree import KaryTree, nNode
+    from invalid_operation_error import InvalidOperationError
+except:
+    from .binary_tree import BinaryTree
+    from .kary_tree import KaryTree, nNode
+    from .invalid_operation_error import InvalidOperationError
 import copy
+
+
+class Queue:
+    """
+    Put docstring here
+    """
+
+    def __init__(self):
+        self.front = None
+        self.rear = None
+        self.size = 0
+
+    def __str__(self):
+        current = self.front
+        str = ''
+        while current:
+            str += f'{{ {current.value} }} -> '
+            current = current.next
+        return str + "NULL"
+
+    def enqueue(self, val):
+        newNode = nNode(val)
+        if self.front is None:
+            self.front = newNode
+            self.rear = newNode
+        else:
+            self.rear.next = newNode
+            self.rear = newNode
+        self.size += 1
+        return self.size
+
+    def dequeue(self):
+        if self.front is None:
+            raise InvalidOperationError
+        temp = self.front
+        if self.front == self.rear:
+            self.rear = None
+        self.front = self.front.next
+        self.size -= 1
+        return temp.value
+
+    def peek(self):
+        if self.front is None:
+            raise InvalidOperationError
+        else:
+            return self.front.value
+
+    def is_empty(self):
+        if self.front:
+            return False
+        else:
+            return True
+
+
+class nNode:
+    """
+    This is the class to create a node
+    """
+
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
 
 
 def fizz_buzz_tree(tree):
@@ -25,21 +92,21 @@ def fizz_buzz_tree(tree):
 
 
 if __name__ == "__main__":
-    one = Node(1)
-    two = Node(2)
-    three = Node(3)
-    four = Node(4)
-    five = Node(5)
-    six = Node(6)
-    seven = Node(7)
-    eight = Node(8)
-    nine = Node(9)
-    ten = Node(10)
-    eleven = Node(11)
-    twelve = Node(12)
-    thirteen = Node(13)
-    fourteen = Node(14)
-    fifteen = Node(15)
+    one = nNode(1)
+    two = nNode(2)
+    three = nNode(3)
+    four = nNode(4)
+    five = nNode(5)
+    six = nNode(6)
+    seven = nNode(7)
+    eight = nNode(8)
+    nine = nNode(9)
+    ten = nNode(10)
+    eleven = nNode(11)
+    twelve = nNode(12)
+    thirteen = nNode(13)
+    fourteen = nNode(14)
+    fifteen = nNode(15)
 
     """
                             1
@@ -58,4 +125,3 @@ if __name__ == "__main__":
     nine.children = [fourteen, fifteen]
     k = KaryTree(one)
     fizz_buzz_tree(k)
-

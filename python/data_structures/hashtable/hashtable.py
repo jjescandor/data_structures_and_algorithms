@@ -23,6 +23,7 @@ class Hashtable:
         self._buckets = [None for item in range(array_size)]
         self.prime = 113
 
+
     def set(self, key, value):
         key = str(key)
         newNode = Node(key, value)
@@ -30,7 +31,15 @@ class Hashtable:
         if self._buckets[array_index] is None:
             self._buckets[array_index] = newNode
         else:
-            temp = self._buckets[array_index]
+            current = self._buckets[array_index]
+            temp = current
+            if self.contains(key):
+                while current:
+                    prev = current
+                    if current.key == key:
+                        current.value = value
+                        return
+                    current = current.next
             newNode.next = temp
             self._buckets[array_index] = newNode
 

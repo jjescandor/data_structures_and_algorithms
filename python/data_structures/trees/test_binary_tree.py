@@ -1,5 +1,8 @@
 import pytest
-from binary_tree import BinaryTree, Node
+try:
+    from binary_tree import BinaryTree, Node
+except:
+    from .binary_tree import BinaryTree, Node
 
 
 # @pytest.mark.skip("TODO")

@@ -1,7 +1,13 @@
 import pytest
-from binary_tree import BinaryTree, Node
-from binary_search_tree import BinarySearchTree
-from tree_breadth_first import breadth_first
+try:
+    from binary_tree import BinaryTree, Node
+    from binary_search_tree import BinarySearchTree
+    from tree_breadth_first import breadth_first
+except:
+    from .binary_tree import BinaryTree, Node
+    from .binary_search_tree import BinarySearchTree
+    from .tree_breadth_first import breadth_first
+
 
 # @pytest.mark.skip("TODO")
 def test_exists():
@@ -69,7 +75,7 @@ def test_binary_search_tree():
     tree.root.left.left = Node(5)
     tree.root.left.right = Node(1000)
     tree.root.left.right.left = Node(300)
-    assert [10, 20, 21, 5, 1000, 300] == breadth_first(tree);
+    assert [10, 20, 21, 5, 1000, 300] == breadth_first(tree)
 
 
 # @pytest.mark.skip("TODO")

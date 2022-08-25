@@ -1,5 +1,5 @@
 import pytest
-from hashtable import Hashtable
+from .hashtable import Hashtable
 
 
 def test_exists():
