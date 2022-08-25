@@ -2,73 +2,13 @@ try:
     from binary_tree import BinaryTree
     from kary_tree import KaryTree, nNode
     from invalid_operation_error import InvalidOperationError
+    from queue import Queue
 except:
     from .binary_tree import BinaryTree
     from .kary_tree import KaryTree, nNode
     from .invalid_operation_error import InvalidOperationError
+    from .queue import Queue
 import copy
-
-
-class Queue:
-    """
-    Put docstring here
-    """
-
-    def __init__(self):
-        self.front = None
-        self.rear = None
-        self.size = 0
-
-    def __str__(self):
-        current = self.front
-        str = ''
-        while current:
-            str += f'{{ {current.value} }} -> '
-            current = current.next
-        return str + "NULL"
-
-    def enqueue(self, val):
-        newNode = nNode(val)
-        if self.front is None:
-            self.front = newNode
-            self.rear = newNode
-        else:
-            self.rear.next = newNode
-            self.rear = newNode
-        self.size += 1
-        return self.size
-
-    def dequeue(self):
-        if self.front is None:
-            raise InvalidOperationError
-        temp = self.front
-        if self.front == self.rear:
-            self.rear = None
-        self.front = self.front.next
-        self.size -= 1
-        return temp.value
-
-    def peek(self):
-        if self.front is None:
-            raise InvalidOperationError
-        else:
-            return self.front.value
-
-    def is_empty(self):
-        if self.front:
-            return False
-        else:
-            return True
-
-
-class nNode:
-    """
-    This is the class to create a node
-    """
-
-    def __init__(self, value, next=None):
-        self.value = value
-        self.next = next
 
 
 def fizz_buzz_tree(tree):
