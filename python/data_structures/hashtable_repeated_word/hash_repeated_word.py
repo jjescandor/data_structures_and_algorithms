@@ -14,10 +14,9 @@ special_ch = "!@#$%^&*(){}[]|:;,.<>"
 
 def first_repeated_word(sentence):
     hashtable = Hashtable()
-    clean_sentence = sentence
     for ch in special_ch:
-        clean_sentence = clean_sentence.replace(ch, "")
-    temp_list = clean_sentence.split(" ")
+        sentence = sentence.replace(ch, "")
+    temp_list = sentence.split(" ")
     temp_list = [x.replace("\n", "") for x in temp_list if x != ""]
     for word in temp_list:
         word = word.lower()
@@ -27,12 +26,11 @@ def first_repeated_word(sentence):
             hashtable.set(word, 1)
 
 
-def hash_word_count(sentence):
+def store_to_hastable(sentence):
     hashtable = Hashtable()
-    clean_sentence = sentence
     for ch in special_ch:
-        clean_sentence = clean_sentence.replace(ch, "")
-    temp_list = clean_sentence.split(" ")
+        sentence = sentence.replace(ch, "")
+    temp_list = sentence.split(" ")
     temp_list = [x.replace("\n", "") for x in temp_list if x != ""]
     for word in temp_list:
         word = word.lower()
@@ -41,6 +39,11 @@ def hash_word_count(sentence):
             hashtable.set(word, value)
         else:
             hashtable.set(word, 1)
+    return hashtable
+
+
+def hash_word_count(sentence):
+    hashtable = store_to_hastable(sentence)
     collections = {}
     for word in hashtable._buckets:
         if word:
@@ -52,19 +55,7 @@ def hash_word_count(sentence):
 
 
 def hash_most_frequently_used(sentence):
-    hashtable = Hashtable()
-    clean_sentence = sentence
-    for ch in special_ch:
-        clean_sentence = clean_sentence.replace(ch, "")
-    temp_list = clean_sentence.split(" ")
-    temp_list = [x.replace("\n", "") for x in temp_list if x != ""]
-    for word in temp_list:
-        word = word.lower()
-        if hashtable.contains(word):
-            value = hashtable.get(word) + 1
-            hashtable.set(word, value)
-        else:
-            hashtable.set(word, 1)
+    hashtable = store_to_hastable(sentence)
     max = 0
     max_word = []
     for word in hashtable._buckets:
