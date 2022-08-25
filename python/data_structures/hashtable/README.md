@@ -43,3 +43,5 @@ Implement a Hashtable Class with the following methods:
 1. hash
     - Arguments: key
     - Returns: Index in the collection for that key
+
+[link to code](hashtable.py)
