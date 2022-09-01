@@ -84,6 +84,3 @@ def add_values_to_empty_tree(tree, values):
         node.right = Node(values.pop()) if values else None
         q.enqueue(node.left)
         q.enqueue(node.right)
-
-    return tree
-

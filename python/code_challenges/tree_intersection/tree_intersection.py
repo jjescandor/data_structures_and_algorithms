@@ -43,7 +43,7 @@ if __name__ == '__main__':
     T.root.right = p4
     q1 = Node(5)
     q2 = Node(90)
-    q3 = Node(61)
+    q3 = Node(81)
     q4 = Node(81)
     S = BinaryTree()
     S.root = q1
@@ -53,12 +53,12 @@ if __name__ == '__main__':
     print(tree_intersection (T, S))
     tree_a = BinaryTree()
     values = [150, 100, 250, 75, 160, 200, 350, 125, 175, 300, 500]
-    a = add_values_to_empty_tree(tree_a, values)
+    add_values_to_empty_tree(tree_a, values)
 
     tree_b = BinaryTree()
     values = [42, 100, 100, 15, 160, 200, 350, 125, 175, 4, 500]
-    b = add_values_to_empty_tree(tree_b, values)
+    add_values_to_empty_tree(tree_b, values)
 
-    actual = tree_intersection(a, b)
+    actual = tree_intersection(tree_a, tree_b)
     print(actual)
     expected = [125, 175, 100, 160, 500, 200, 350]
