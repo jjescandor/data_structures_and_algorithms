@@ -3,32 +3,34 @@ try:
 except:
     from .hashtable import Hashtable
 
-
-
-def left_join(hashmap_left, hashmap_right):
+def left_join(hashmap_left, hashmap_right, join_type="left"):
+    if join_type == "left":
+        outer = hashmap_left
+        inner = hashmap_right
+    else:
+        inner = hashmap_left
+        outer = hashmap_right
     collection = []
-    if type(hashmap_left) is dict and type(hashmap_left) is dict:
-        for key in hashmap_left:
+    if type(outer) is dict and type(inner) is dict:
+        for key in outer:
             words = []
             words.append(key)
-            words.append(hashmap_left[key])
-            if key in hashmap_right.keys():
-                words.append(hashmap_right[key])
+            words.append(outer[key])
+            if key in inner.keys():
+                words.append(inner[key])
             else:
                 words.append("NONE")
             collection.append(words)
-        for a in collection:
-            print(a)
         return collection
-    for item in hashmap_left._buckets:
+    for item in outer._buckets:
         if item:
             current = item
             while current:
                 words = []
                 words.append(current.key)
                 words.append(current.value)
-                if hashtableA.contains(current.key):
-                    words.append(hashmap_right.get(current.key))
+                if inner.contains(current.key):
+                    words.append(inner.get(current.key))
                 else:
                     words.append(None)
                 current = current.next
@@ -37,13 +39,6 @@ def left_join(hashmap_left, hashmap_right):
 
 
 if __name__ == "__main__":
-    synonyms = {
-        "diligent": "employed",
-        "fond": "enamored",
-        "guide": "usher",
-        "outfit": "garb",
-        "wrath": "anger",
-    }
     hashtableS = Hashtable(1024)
     hashtableS.set("diligent", "employed")
     hashtableS.set("fond", "enamored")
@@ -56,6 +51,6 @@ if __name__ == "__main__":
     hashtableA.set("guide", "follow")
     hashtableA.set("flow", "jam")
     hashtableA.set("wrath", "delight")
-    actual = left_join(synonyms, hashtableA)
+    actual = left_join(hashtableS, hashtableA)
     for a in actual:
         print(a)
