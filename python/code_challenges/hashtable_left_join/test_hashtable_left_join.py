@@ -1,8 +1,10 @@
 import pytest
 try:
     from hashtable_left_join import left_join
+    from hashtable import Hashtable
 except:
     from .hashtable_left_join import left_join
+    from .hashtable import Hashtable
 
 
 def test_exists():
@@ -10,7 +12,7 @@ def test_exists():
 
 
 # @pytest.mark.skip("TODO")
-def test_example():
+def test_one():
     synonyms = {
         "diligent": "employed",
         "fond": "enamored",
@@ -35,5 +37,26 @@ def test_example():
     ]
 
     actual = left_join(synonyms, antonyms)
+
+    assert actual == expected
+
+
+def test_two():
+    hashtableS = Hashtable(1024)
+    hashtableS.set("diligent", "employed")
+    hashtableS.set("fond", "enamored")
+    hashtableS.set("outfit", "garb")
+    hashtableA = Hashtable(1024)
+    hashtableA.set("diligent", "idle")
+    hashtableA.set("fond", "averse")
+    hashtableA.set("wrath", "delight")
+
+    actual = left_join(hashtableS, hashtableA)
+
+    expected = [
+        ["diligent", "employed", "idle"],
+        ["outfit", "garb", None],
+        ["fond", "enamored", "averse"],
+    ]
 
     assert actual == expected
