@@ -10,8 +10,7 @@ def dict_left_join(outer, inner):
 def left_join(hashmap_left, hashmap_right, join_type="left"):
     outer = hashmap_left if join_type=="left" else hashmap_right
     inner = hashmap_right if join_type=="left" else hashmap_left
-    if type(outer) is dict and type(inner) is dict:
-        return dict_left_join(outer, inner)
+    None if type(outer) is not dict and type(inner) is not dict else dict_left_join(outer, inner)
     return [[key,outer.get(key),inner.get(key)]for key in outer.keys()]
 
 
