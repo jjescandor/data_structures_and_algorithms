@@ -19,9 +19,7 @@ def left_join(hashmap_left, hashmap_right, join_type="left"):
     if type(outer) is dict and type(inner) is dict:
         return dict_left_join(outer, inner)
     for key in outer.keys():
-        word = []
-        word.extend([key,outer.get(key),inner.get(key)])
-        collection.append(word)
+        collection.append([key,outer.get(key),inner.get(key)])
     return collection
 
 
