@@ -12,7 +12,7 @@ def test_exists():
 
 
 # @pytest.mark.skip("TODO")
-def test_one():
+def test_dictionary_join():
     synonyms = {
         "diligent": "employed",
         "fond": "enamored",
@@ -41,7 +41,7 @@ def test_one():
     assert actual == expected
 
 
-def test_two():
+def test_left_join():
     hashtableS = Hashtable(1024)
     hashtableS.set("diligent", "employed")
     hashtableS.set("fond", "enamored")
@@ -57,6 +57,27 @@ def test_two():
         ["diligent", "employed", "idle"],
         ["outfit", "garb", None],
         ["fond", "enamored", "averse"],
+    ]
+
+    assert actual == expected
+
+def test_right_join():
+    hashtableS = Hashtable(1024)
+    hashtableS.set("diligent", "employed")
+    hashtableS.set("fond", "enamored")
+    hashtableS.set("outfit", "garb")
+    hashtableA = Hashtable(1024)
+    hashtableA.set("diligent", "idle")
+    hashtableA.set("fond", "averse")
+    hashtableA.set("wrath", "delight")
+
+    actual = left_join(hashtableA, hashtableS)
+    print(actual)
+
+    expected = [
+        ["diligent", "idle", "employed"],
+        ["fond", "averse", "enamored"],
+        ["wrath", "delight", None],
     ]
 
     assert actual == expected
