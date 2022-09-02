@@ -4,21 +4,15 @@ except:
     from .hashtable import Hashtable
 
 def dict_left_join(outer, inner):
-    collection = []
-    for key in outer:
-        collection.append([key, outer[key], inner[key] if key in inner.keys() else "NONE"])
-    return collection
+    return [[key, outer[key], inner[key] if key in inner.keys() else None] for key in outer]
 
 
 def left_join(hashmap_left, hashmap_right, join_type="left"):
     outer = hashmap_left if join_type=="left" else hashmap_right
     inner = hashmap_right if join_type=="left" else hashmap_left
-    collection = []
     if type(outer) is dict and type(inner) is dict:
         return dict_left_join(outer, inner)
-    for key in outer.keys():
-        collection.append([key,outer.get(key),inner.get(key)])
-    return collection
+    return [[key,outer.get(key),inner.get(key)]for key in outer.keys()]
 
 
 if __name__ == "__main__":

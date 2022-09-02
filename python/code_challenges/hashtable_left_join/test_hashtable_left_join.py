@@ -32,7 +32,7 @@ def test_one():
         ["diligent", "employed", "idle"],
         ["fond", "enamored", "averse"],
         ["guide", "usher", "follow"],
-        ["outfit", "garb", "NONE"],
+        ["outfit", "garb", None],
         ["wrath", "anger", "delight"],
     ]
 
