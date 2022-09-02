@@ -6,9 +6,7 @@ except:
 def dict_left_join(outer, inner):
     collection = []
     for key in outer:
-        words = []
-        words.extend([key, outer[key], inner[key] if key in inner.keys() else "NONE"])
-        collection.append(words)
+        collection.append([key, outer[key], inner[key] if key in inner.keys() else "NONE"])
     return collection
 
 
