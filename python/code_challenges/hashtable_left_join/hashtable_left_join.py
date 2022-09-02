@@ -3,38 +3,25 @@ try:
 except:
     from .hashtable import Hashtable
 
+def dict_left_join(outer, inner):
+    collection = []
+    for key in outer:
+        words = []
+        words.extend([key, outer[key], inner[key] if key in inner.keys() else "NONE"])
+        collection.append(words)
+    return collection
+
+
 def left_join(hashmap_left, hashmap_right, join_type="left"):
-    if join_type == "left":
-        outer = hashmap_left
-        inner = hashmap_right
-    else:
-        inner = hashmap_left
-        outer = hashmap_right
+    outer = hashmap_left if join_type=="left" else hashmap_right
+    inner = hashmap_right if join_type=="left" else hashmap_left
     collection = []
     if type(outer) is dict and type(inner) is dict:
-        for key in outer:
-            words = []
-            words.append(key)
-            words.append(outer[key])
-            if key in inner.keys():
-                words.append(inner[key])
-            else:
-                words.append("NONE")
-            collection.append(words)
-        return collection
-    for item in outer._buckets:
-        if item:
-            current = item
-            while current:
-                words = []
-                words.append(current.key)
-                words.append(current.value)
-                if inner.contains(current.key):
-                    words.append(inner.get(current.key))
-                else:
-                    words.append(None)
-                current = current.next
-                collection.append(words)
+        return dict_left_join(outer, inner)
+    for key in outer.keys():
+        word = []
+        word.extend([key,outer.get(key),inner.get(key)])
+        collection.append(word)
     return collection
 
 
