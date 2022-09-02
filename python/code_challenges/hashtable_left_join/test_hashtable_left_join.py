@@ -71,7 +71,7 @@ def test_right_join():
     hashtableA.set("fond", "averse")
     hashtableA.set("wrath", "delight")
 
-    actual = left_join(hashtableS, hashtableA)
+    actual = left_join(hashtableS, hashtableA, "right")
     print(actual)
 
     expected = [
