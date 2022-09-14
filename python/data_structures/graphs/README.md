@@ -7,6 +7,7 @@
 1. add node
 1. add edge
 1. get nodes
+1. get neighbors
 1. size
 
 ## Approach & Efficiency
@@ -19,13 +20,17 @@ add_edge:
     time: O(1)
     big: O(1)
 
-get_node
+get_nodes
+    time: O(1)
+    big: O(1)
+
+get_neighbors:
     time: O(n)
     big: O(n)
 
-get_neighbors:
-    time: O(n^2)
-    big: O(n)
+size:
+    time: O(1)
+    space: O(1)
 
 ## API
 
