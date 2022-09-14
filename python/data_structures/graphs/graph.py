@@ -26,7 +26,9 @@ class Graph:
         
 
     def get_nodes(self):
-        return self.vertex_collection
+        if len(self.vertex_collection) >= 1:
+            return self.vertex_collection
+        return None
 
 
     def get_neighbors(self, vertex):
