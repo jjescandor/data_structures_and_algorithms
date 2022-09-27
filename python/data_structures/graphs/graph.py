@@ -39,7 +39,10 @@ class Graph:
         return len(self.vertex_collection)
 
 
-    def depth_first_search(self, vertex, stack = [], collection = [], visited = set()):
+    def depth_first_search(self, vertex):
+        stack =[]
+        collection = []
+        visited = set()
         if len(self.vertex_collection) <= 0: return []
         stack.append(vertex)
         visited.add(vertex.value)
