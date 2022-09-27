@@ -17,7 +17,7 @@ class Graph:
     def add_edge(self, vertex1, vertex2, weight=1):
         if vertex1 in self.vertex_collection and vertex2 in self.vertex_collection:
                 edge = Edge(vertex2, weight)
-                vertex1.adjacency_list.append([vertex2, edge])
+                vertex1.adjacency_list.insert(0, [vertex2, edge])
         else:
             raise KeyError
         
@@ -39,20 +39,18 @@ class Graph:
         return len(self.vertex_collection)
 
 
-    def depth_first_search(self, vertex):
-        stack =[]
+    def depth_first_search(self, vertex, stack=[], visited=set()):
         collection = []
-        visited = set()
-        if len(self.vertex_collection) <= 0: return []
+        if not len(self.vertex_collection): return []
         stack.append(vertex)
         visited.add(vertex.value)
         while len(stack):
             node = stack.pop()
             collection.append(node.value)
-            for i in reversed(range(len(node.adjacency_list))):
-                if node.adjacency_list[i][0].value not in visited:
-                    stack.append(node.adjacency_list[i][0])
-                visited.add(node.adjacency_list[i][0].value)
+            for neighbor in node.adjacency_list:
+                if neighbor[0].value not in visited:
+                    stack.append(neighbor[0])
+                    visited.add(neighbor[0].value)
         return collection
 
 class Vertex:
