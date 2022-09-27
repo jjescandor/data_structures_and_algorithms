@@ -57,3 +57,32 @@ size:
 1. size
 - Arguments: none
 - Returns the total number of nodes in the graph
+
+
+# Depth First Traversal
+Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as far as possible along each branch before backtracking.
+
+## Challenge
+Write the following method for the Graph class:
+
+- Name: Depth first
+- Arguments: Node (Starting point of search)
+- Return: A collection of nodes in their pre-order depth-first traversal order
+- Program output: Display the collection
+
+## Approach & Efficiency
+Big O:
+time: O(n)
+space: O(n)
+
+## Whiteboard
+![graph.png](graph.png)
+
+
+## Testing
+
+run pytest
+
+## Requirements
+
+Link to [code](graph.py)

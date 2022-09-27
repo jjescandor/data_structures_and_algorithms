@@ -39,6 +39,19 @@ class Graph:
         return len(self.vertex_collection)
 
 
+    def depth_first_search(self, vertex, stack = [], collection = [], visited = set()):
+        if len(self.vertex_collection) <= 0: return []
+        stack.append(vertex)
+        visited.add(vertex.value)
+        while len(stack):
+            node = stack.pop()
+            collection.append(node.value)
+            for i in reversed(range(len(node.adjacency_list))):
+                if node.adjacency_list[i][0].value not in visited:
+                    stack.append(node.adjacency_list[i][0])
+                visited.add(node.adjacency_list[i][0].value)
+        return collection
+
 class Vertex:
     def __init__(self, value):
         self.value = value
@@ -61,3 +74,4 @@ if __name__ == "__main__":
     g.add_edge(apple, banana, 5)
     neighbors = g.get_neighbors(apple)
     print(neighbors[0])
+    print(g.depth_first_search(apple))
